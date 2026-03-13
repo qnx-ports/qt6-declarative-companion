@@ -2,7 +2,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=qt6-declarative
 pkgver=6.10.0
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="Classes for QML and JavaScript languages"
 url="https://qt.io/"
 arch="all"
@@ -108,6 +108,7 @@ private_dev() {
     amove usr/lib/qt6/modules/*Private.json
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 104d0d237bbde943d739bfa4831f85576b67fb838d06b1d4760976aaa74fadac3523544eecdcf4d614991adc9c73294c2494bf094217ce648e6a721ab95a5415  qtdeclarative-everywhere-src-6.10.0.tar.xz
 "
